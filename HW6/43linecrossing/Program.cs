@@ -24,10 +24,20 @@ int b1 = EntNum("Enter the b-coefficient of a first line");
 int k2 = EntNum("Enter the k-coefficient of a second line");
 int b2 = EntNum("Enter the b-coefficient of a second line");
 
-double x = (b2 - b1) / (k1 - k2);
-x = Math.Round(x,2);
+if (k1 == k2)
+{
+    if (b1 == b2) 
+    {
+        Console.WriteLine("The lines are match");
+        return;
+    }
+    Console.WriteLine("The lines are parallel");
+    return;
+}
+    double x = (b2 - b1) / (k1 - k2);
+    x = Math.Round(x,2);
 
-double y = k1*x + b1;
-y = Math.Round(y,2);
+    double y = k1*x + b1;
+    y = Math.Round(y,2);
 
-Console.WriteLine($"Lines, that you set, have a common point with coordinates ({x};{y})");
+    Console.WriteLine($"Lines, that you set, have a common point with coordinates ({x};{y})");
